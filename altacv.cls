@@ -290,6 +290,15 @@
 	\medskip\normalsize
 }
 
+\newcommand{\cvproject}[3]{%
+	{\large\color{emphasis}#1 %
+		\ifstrequal{#2}{}{}{
+			\href{#2}{\faExternalLink*}
+		} \hfill %
+		\ifstrequal{#3}{}{}{{\small\faCalendar~#3}} \par}
+	\medskip\normalsize
+}
+
 \newcommand{\cvachievement}[3]{%
 	\begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
 		\multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
