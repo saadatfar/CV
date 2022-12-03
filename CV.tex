@@ -1,0 +1,197 @@
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 package.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+% \colorlet{tagline}{PastelRed}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\newcommand{\project}[3]{
+	\cvevent{
+		#1
+		\ifstrequal{#2}{}{}{
+			\href{#2}{\faExternalLink*}
+		}
+	}{}{#3}{}
+}
+
+\begin{document}
+\name{Mohammad Hossein Saadatfar}
+\tagline{Engineer}
+\photoR{2.5cm}{profile}
+\personalinfo{%
+  \email{mh.saadatfar@gmail.com}
+  \homepage{mhsaadatfar.com}
+  \linkedin{mhsaadatfar}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Experience}
+
+\cvevent{CTO, Co Founder}{Mersateb Co.}{April 2017 -- Ongoing}{}
+Mersateb Co. was founded in 2015 and expanded with the goal of developing dermatology treatments based on radio frequency waves. It has become one of the first 3 companies producing dermatology equipment in Iran in less than 5 years. In addition, it expanded the design and production field to other types of dermatology and gynecology devices. Our company is now a manufacturer of 5 dermatology and gynecology products with over 40 employees.
+\bigskip
+\begin{itemize}
+\item Design and Production of one medical device per year on average in the field of Dermatology and Gynecology
+\item Obtaining the ISO 13485 and Medical CE Certificate
+\item Over 1000 devices have been produced and sold. (The best-selling dermatology plasma device in Iran)
+\item Export to 3 European countries.
+\item Over 40 members of staff
+\end{itemize}
+
+\divider
+
+\cvevent{CTO, Co Founder}{BMD Co. (BMD ULUSLARARASI MEDIKAL ŞIRKETI)}{Sep 2019 -- Ongoing}{}
+BMD Co. is the branch of Mersateb Co. in Turkey. 
+
+%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Projects}
+
+\project{Solatrix™ Fractional Thermo-mechanical Device}{}{2020}
+Solatrix is a fractional thermo-mechanical device that has a significant effect on the rejuvenation and removal of skin lesions by transferring direct heat to the skin. The high-temperature (400°C) titanium tip of the device transfers heat to the skin with extremely low invasion; and by stimulating collagen production, it causes rejuvenation and eliminates wrinkles. The heat can be controlled by the contact time of the tip with the skin and the penetration depth of the tip.
+
+\divider
+
+\project{MadamX™ Vaginal RF Device}{https://mersateb.com/en/madamx/}{2019}
+The vaginal RF technology exposes the inner and outer parts of vagina to high frequency radio waves emitted from safe electrodes with remarkable results.
+
+High-energy and long-lasting RF waves is an effective treatment without any complication that can heat lower layers and muscles with monopolar and multipolar functions without heating the skin or the mucous membrane.
+
+\divider
+
+\project{Firebolt™ Plasma Device}{https://mersateb.com/en/firebolt/}{2018}
+The Firebolt plasma device transfers high-frequency plasma energy to the skin. This energy is used in various treatments such as blepharoplasty and the removal of moles, freckles, and wrinkles. The released energy generates a heating action on the skin surface that removes the old, damaged epidermis and dermis cells, thus triggering collagen creation. The exclusive features of the Firebolt plasma device are its high safety, various treatment indications, and its therapeutic performance without side effects.
+
+\divider
+
+\project{Nettle™ Fractional RF Device}{https://mersateb.com/en/nettle/}{2018}
+The fractional RF technology applies high-frequency and minimally-intrusive radio waves to specific skin layers to produce heat, which stimulates fibroblasts and produces collagen and elastin. Ultimately, this process significantly contributes to skin rejuvenation. Fractional RF applies radio waves to the skin with fractional needles and can produce different effects in the skin’s lower layers without exposing the skin surface to heat; thus, significantly reducing treatment side effects.
+
+\divider
+
+\project{Hurricane™ Carboxytherapy Device}{https://mersateb.com/en/hurricane/}{2019}
+The device starts a series of interconnected reactions after controlled and continuous injections of CO2 and leads to some changes like vasodilation, an increase in blood flow, and an increase in body temperature. The blood flow increase leads to the oxygenation of the intended area which itself helps the metabolism increase, tissue rejuvenation, and detoxification and it finally causes rejuvenation and cellulitis decrease in the intended tissue.
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\nocite{*}
+\switchcolumn
+
+\cvsection{About Me}
+Being an engineer, I love building systems that work, no matter if they are devices, software, or even a company or a group of friends. I my view, If you approach everything in a systematic way, you will be able to learn, comprehend, and improve everything faster and more effectively.
+
+%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvsection{Education}
+\cvevent{MSc\ in Power Electronics \& Electrical Machines}{University of Tehran}{2015 -- 2018}{}
+\divider
+\cvevent{BSc \ in Electrical Engineering}{University of Tehran}{2011 -- 2015}{}
+
+\cvsection{Strengths}
+
+\cvtag{High Frequency Power Convertors} \\
+\cvtag{Project/Product Management} \\
+\cvtag{DC/DC Convertors}
+\cvtag{Fullstack Web Design}
+
+\cvsection{Languages}
+
+\cvskill{English}{4}
+\cvskill{Persian}{5}
+
+%%%%%%%%%% Referees %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Referees}
+
+\cvref{Fattah Haeri}{CEO at Mersateb Co.}{f.haeri@mersateb.com}
+
+%%%%%%%%%% SKILLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{SKILLS}
+
+\cvsubsection{Programming Languages}
+\cvskill{C, C++, C\#}{5}
+\cvskill{SQL}{4}
+\cvskill{Javascript}{4}
+\cvskill{Verilog}{3}
+
+
+\cvsubsection{Electronics and Power Electronics}
+\cvskill{Altium Designer}{5}
+\cvskill{LabVIEW}{5}
+\cvskill{OrCAD}{4}
+\cvskill{PoweSIM}{4}
+\cvskill{MATLAB}{4}
+\cvskill{PLC}{4}
+
+\cvsubsection{Embeded Design}
+\cvskill{STM32 ARM, Keil MDK}{5}
+\cvskill{FreeRTOS}{3}
+\cvskill{Xilinx FPGA, Xilinx ISE}{3}
+\cvskill{AVR, Codevision}{5}
+
+\cvsubsection{Web Design}
+\cvskill{ASP.Net Web API}{5}
+\cvskill{Vue.js, Nuxt}{5}
+\cvskill{Astro}{4}
+
+
+\cvsubsection{Network}
+\cvskill{CCNA}{4}
+\cvskill{Mikrotik MTCNA}{4}
+
+\cvsubsection{Regulation and Standards}
+\cvskill{Medical Device Directive \\ MDD 93/42/eec}{5}
+\cvskill{Medical Device Regulation \\ MDR EU 2017/745}{4}
+\cvskill{ISO 13485}{5}
+\cvskill{ISO 14971}{5}
+\cvskill{IEC 60601}{5}
+\cvskill{ISO 9001}{4}
+\cvskill{EMC}{3}
+
+\cvsubsection{Project Management}
+\cvskill{Agile Method}{4}
+\cvskill{Scrum, Kanban}{4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{paracol}
+
+\end{document}
