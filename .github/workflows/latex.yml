@@ -12,11 +12,13 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: CV.tex
+      - name: Rename the Result
+        run: mv CV.pdf Resume-mhsaadatfar.pdf
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: CV.pdf
+          path: Resume-mhsaadatfar.pdf
 
   deploy:
     runs-on: ubuntu-latest
