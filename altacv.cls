@@ -96,7 +96,7 @@
 \colorlet{body}{black!80!white}
 \colorlet{name}{heading}
 \colorlet{tagline}{accent}
-\newcommand{\itemmarker}{{\small\textbullet}}
+\newcommand{\itemmarker}{{--}}
 \newcommand{\ratingmarker}{\faCircle}
 
 \RequirePackage{tikz}
