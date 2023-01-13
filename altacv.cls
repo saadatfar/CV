@@ -141,10 +141,12 @@
 %%       file, the icon name is pasted
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
-	\BeginAccSupp{method=escape,ActualText={#1:~#2}}
 	\IfNoValueTF{#3}{%
+		\BeginAccSupp{method=escape,ActualText={#2}}
 		\mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
+		\EndAccSupp{}
 	}{%
+		\BeginAccSupp{method=escape,ActualText={#3}}
 		\if@withhyper%
 		\mbox{\textcolor{accent}{\normalfont #1}~
 			\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
@@ -152,8 +154,8 @@
 		\ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
 		\mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
 		\fi%
+		\EndAccSupp{}
 	}%
-	\EndAccSupp{}
 }%
 
 
@@ -191,9 +193,9 @@
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
-\NewInfoField{email}{\faAt}[mailto:]
+\NewInfoField{email}{\faAt}
 \NewInfoField{mailaddress}{\faEnvelope}
-\NewInfoField{phone}{\faPhone}[tel:]
+\NewInfoField{phone}{\faPhone}
 \NewInfoField{homepage}{\faGlobe}[https://]
 \NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
 \NewInfoField{linkedin}{\faLinkedin}[https://linkedin.com/in/]
