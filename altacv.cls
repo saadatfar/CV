@@ -349,14 +349,9 @@
 % v1.6: Use accsupp so that the actual numeric value is copied/pasted
 %       and also support 0.5, 1.5, 2.5, 3.5, 4.5
 \newcommand{\cvskill}[2]{%
-	\textcolor{emphasis}{\textbf{#1}}\hfill
-	\BeginAccSupp{method=plain,ActualText={#2}}
-	\foreach \x in {1,...,5}{%
-		\ifdimequal{\x pt - #2 pt}{0.5pt}%
-		{\clipbox*{0pt -0.25ex {.5\width} {\totalheight}}{\color{accent}\ratingmarker}%
-			\clipbox*{{.5\width} -0.25ex {\width} {\totalheight}}{\color{body!30}\ratingmarker}}
-		{\ifdimgreater{\x bp}{#2 bp}{\color{body!30}}{\color{accent}}\ratingmarker}%
-	}\EndAccSupp{}\par%
+	\textcolor{emphasis}{\textbf{#1:}}
+	#2 \par
+	\medskip
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
