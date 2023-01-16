@@ -114,6 +114,8 @@
 
 \setlength{\parindent}{0pt}
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\hideText}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
+\newcommand{\link}[2]{\hideText{\href{#1}{#2}}}
 
 \newenvironment{fullwidth}{%
 	\begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -142,19 +144,10 @@
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
 	\IfNoValueTF{#3}{%
-		\BeginAccSupp{method=escape,ActualText={#2}}
-		\mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
-		\EndAccSupp{}
+		\mbox{\hideText{\textcolor{accent}{\normalfont #1}}~\utffriendlydetokenize{#2}\hspace{2em}}%
 	}{%
-		\BeginAccSupp{method=escape,ActualText={#3}}
-		\if@withhyper%
-		\mbox{\textcolor{accent}{\normalfont #1}~
+		\mbox{\hideText{\textcolor{accent}{\normalfont #1}}~
 			\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
-		\else%
-		\ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
-		\mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
-		\fi%
-		\EndAccSupp{}
 	}%
 }%
 
@@ -196,9 +189,9 @@
 \NewInfoField{email}{\faAt}
 \NewInfoField{mailaddress}{\faEnvelope}
 \NewInfoField{phone}{\faPhone}
-\NewInfoField{homepage}{\faGlobe}[https://]
+\NewInfoField{homepage}{\faGlobe}[]
 \NewInfoField{twitter}{\faTwitter}[https://twitter.com/]
-\NewInfoField{linkedin}{\faLinkedin}[https://linkedin.com/in/]
+\NewInfoField{linkedin}{\faLinkedin}[]
 \NewInfoField{github}{\faGithub}[https://github.com/]
 \NewInfoField{birthday}{\faBirthdayCake}
 % v1.?? Use fontawesome5 for Orcid symbol
@@ -285,8 +278,8 @@
 \newcommand{\cvevent}[4]{%
 	{\large\color{emphasis}#1
 		\hfill
-		\ifstrequal{#4}{}{}{{\small\faMapMarker~#4}}
-		\ifstrequal{#3}{}{}{{\small\faCalendar~#3}}
+		\ifstrequal{#4}{}{}{{\small\hideText{\faMapMarker}~#4}}
+		\ifstrequal{#3}{}{}{{\small\hideText{\faCalendar}~#3}}
 		\par
 	}
 	\smallskip\normalsize
@@ -299,9 +292,9 @@
 \newcommand{\cvproject}[3]{%
 	{\large\color{emphasis}#1 %
 		\ifstrequal{#2}{}{}{
-			\href{#2}{\faExternalLink*}
+			\link{#2}{\faExternalLink*}
 		} \hfill %
-		\ifstrequal{#3}{}{}{{\small\faCalendar~#3}} \par}
+		\ifstrequal{#3}{}{}{{\small\hideText{\faCalendar}~#3}} \par}
 	\medskip\normalsize
 }
 
