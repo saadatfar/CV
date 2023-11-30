@@ -104,7 +104,7 @@
 \RequirePackage[skins]{tcolorbox}
 \RequirePackage[inline]{enumitem}
 \setlist{leftmargin=*,labelsep=0.5em,nosep,itemsep=0.25\baselineskip,after=\vspace{0.25\baselineskip}}
-\setlist[itemize]{label=\itemmarker}
+\setlist[itemize]{before=\justifying, label=\itemmarker}
 \RequirePackage{graphicx}
 \RequirePackage{trimclip}
 \RequirePackage{dashrule}
