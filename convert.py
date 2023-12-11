@@ -5,6 +5,7 @@ def latex_to_markdown(latex_content):
 
     # Remove links
     latex_content = re.sub(r'\\link\{(.+?)\}\{(.+?)\}', r'', latex_content)
+    latex_content = re.sub(r'\\titledesc\{(.+?)\}', r'- \1', latex_content)
     latex_content = re.sub(r'\\begin\{.*?}', r'', latex_content)
     latex_content = re.sub(r'\\end\{.*?}', r'', latex_content)
     latex_content = re.sub(r'\\medskip', r'', latex_content)
