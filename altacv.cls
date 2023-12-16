@@ -116,6 +116,7 @@
 \newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
 \newcommand{\hideText}[1]{\BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}}
 \newcommand{\link}[2]{\hideText{\href{#1}{#2}}}
+\newcommand{\titledesc}[1]{\textsubscript{\textit{#1}}}
 
 \newenvironment{fullwidth}{%
 	\begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
